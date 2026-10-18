@@ -12,4 +12,7 @@ document.addEventListener('click',cl);
 addEventListener('scroll',e=>{if(document.querySelector('.ddm')&&!(e.target.closest&&e.target.closest('.ddm')))cl()},true);
 const stO=()=>ST.map((s,k)=>[s[0],s[0],`<span class="pill s${k}" style="padding:2px 6px">${I(s[1])}</span>`]);
 const stD=(k,v,fn)=>{const i=si(v);return dd(k,stO(),v,fn,{sm:1,cls:()=>'pill s'+i,lead:I(ST[i][1])})};
+// filter options with live counts; only objectives that have items are listed (the active one always stays)
+const obF=f=>[[0,'All objectives · '+cnt(f)],...[1,2,3,4,5].filter(n=>n==fo||cnt(i=>f(i)&&i.obj==n)).map(n=>[n,`O${n} · ${OB[n]} · ${cnt(i=>f(i)&&i.obj==n)}`])];
+const stF=f=>[['All','All statuses · '+cnt(f)],...ST.map((s,k)=>[s[0],`${s[0]} · ${cnt(i=>f(i)&&i.status==s[0])}`,`<span class="pill s${k}" style="padding:2px 6px">${I(s[1])}</span>`])];
 const obO=(all)=>[...(all?[[0,'All objectives']]:[]),...[1,2,3,4,5].map(n=>[n,`O${n} · ${OB[n]}`])];

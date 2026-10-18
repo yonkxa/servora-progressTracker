@@ -17,3 +17,6 @@ label{display:block;font-size:12px;font-weight:600;color:var(--mu);margin-bottom
 .btn:active{transform:scale(.95)}.btn.p{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;box-shadow:0 8px 18px rgba(124,77,255,.35)}
 .sr{position:relative;flex:1 1 200px}.sr .i{position:absolute;left:12px;top:12px;color:var(--mu)}.sr .f{padding-left:38px}
 .tool{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}.tool .dd{flex:1 1 150px}
+
+.af{align-items:flex-end}.af .f,.af .ddb,.af .btn{height:44px;min-height:44px}.af .n4{flex:1.5 1 200px}
+.empty .btn{margin-left:8px}
