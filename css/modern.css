@@ -7,9 +7,9 @@
 .jr{grid-column:1/-1;display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
 .js{background:rgba(255,255,255,.16);border-radius:18px;padding:10px 6px;text-align:center;font-size:12.5px;cursor:pointer;transition:transform .35s cubic-bezier(.34,1.56,.64,1),background .2s}
 .js:hover{transform:translateY(-3px);background:rgba(255,255,255,.28)}.js:active{transform:scale(.95)}.js b{display:block;font-size:17px;font-weight:700}
-.bd{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,1fr);gap:12px;overflow-x:auto;padding-bottom:8px;scroll-snap-type:x mandatory;overscroll-behavior-x:contain}
-.col{background:var(--soft);border-radius:22px;padding:10px;scroll-snap-align:start;display:flex;flex-direction:column;gap:8px;max-height:72dvh;overflow:auto;min-width:0}
-.ch2{display:flex;align-items:center;gap:8px;font-weight:650;padding:6px 12px;border-radius:99px;position:sticky;top:0;z-index:1}.ch2 em{margin-left:auto;font-style:normal;opacity:.8}
+.bd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:start}
+.col{background:var(--soft);border-radius:22px;padding:10px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.ch2{display:flex;align-items:center;gap:8px;font-weight:650;padding:6px 12px;border-radius:99px}.ch2 em{margin-left:auto;font-style:normal;opacity:.8}
 .kc{background:var(--card);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}.kc b{font-weight:600}.kc small{color:var(--mu)}
 .ckb{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:0;background:var(--card);color:var(--tx);font:inherit;padding:10px 12px;border-radius:14px;margin:0 0 6px;cursor:pointer;min-height:44px;transition:background .2s,transform .2s}
 .ckb:active{transform:scale(.97)}
@@ -17,3 +17,8 @@
 .ckb.on{color:var(--mu);text-decoration:line-through}.ckb.on .bx{background:linear-gradient(135deg,var(--ac),var(--ac2));border-color:transparent;color:#fff;transform:scale(1.1)}
 #sheet,#scrim{display:none}
 @media(prefers-reduced-motion:reduce){*,::before,::after{animation:none!important;transition:none!important}}
+.seg{display:none}
+.seg button{border:0;background:none;color:var(--mu);font:inherit;border-radius:13px;padding:7px 2px;display:flex;flex-direction:column;align-items:center;gap:1px;cursor:pointer;transition:background .25s,color .25s,transform .25s}
+.seg button b{font-size:16px;font-weight:700;line-height:1.1}.seg button small{font-size:10.5px}.seg button:active{transform:scale(.94)}
+.seg button.on{background:var(--card);box-shadow:0 4px 12px rgba(0,0,0,.12);color:var(--tx)}
+.seg button.on[data-k="0"] .i{color:var(--c0)}.seg button.on[data-k="1"] .i{color:var(--c1)}.seg button.on[data-k="2"] .i{color:var(--c2)}.seg button.on[data-k="3"] .i{color:var(--c3)}

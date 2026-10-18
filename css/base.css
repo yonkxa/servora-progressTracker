@@ -5,7 +5,7 @@ body{margin:0;min-height:100vh;color:var(--tx);font:15px/1.45 -apple-system,Blin
 h1,h2,h3,b{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Segoe UI",Roboto,sans-serif}
 button,input,textarea{font-family:inherit;letter-spacing:inherit}
 #bg{position:fixed;inset:0;z-index:-1;transform:translateZ(0);background:linear-gradient(135deg,var(--bgA),var(--bgB) 50%,var(--bgC))}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bgA);z-index:50}
+body::before{content:"";position:fixed;inset:0 0 auto;height:calc(env(safe-area-inset-top,0px)*1.5);background:linear-gradient(rgba(35,12,70,.5),rgba(35,12,70,0));z-index:50;pointer-events:none}
 *{scrollbar-width:thin;scrollbar-color:#fff transparent}
 ::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:#fff;border-radius:99px;border:2px solid transparent;background-clip:content-box}

@@ -1,5 +1,5 @@
 /* LAYOUT: main area (fixed offset), panel, page header, 12-col grid */
-main{margin-left:96px;padding:14px 14px 40px 0;max-width:1340px;transition:margin-left .38s cubic-bezier(.22,1,.36,1)}
+main{margin-left:96px;padding:calc(14px + env(safe-area-inset-top,0px)) 14px 40px 0;max-width:1340px;transition:margin-left .38s cubic-bezier(.22,1,.36,1)}
 /* page slides with the sidebar (same duration + easing) so the layout re-flows in sync; cards re-fit via container queries */
 .sb.ex~main{margin-left:264px}
 @media(hover:hover) and (min-width:781px){.sb:hover~main{margin-left:264px;transition-delay:.08s}.sb:hover{transition-delay:.08s}}
