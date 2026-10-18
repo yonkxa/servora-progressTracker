@@ -1,0 +1,14 @@
+/* LAYOUT: main area (fixed offset), panel, page header, 12-col grid */
+main{margin-left:96px;padding:14px 14px 40px 0;max-width:1340px;transition:margin-left .38s cubic-bezier(.22,1,.36,1)}
+/* page slides with the sidebar (same duration + easing) so the layout re-flows in sync; cards re-fit via container queries */
+.sb.ex~main{margin-left:264px}
+@media(hover:hover) and (min-width:781px){.sb:hover~main{margin-left:264px;transition-delay:.08s}.sb:hover{transition-delay:.08s}}
+.card,.hero{contain:layout style}
+.panel{container-type:inline-size;background:var(--glass);border-radius:30px;box-shadow:var(--sh);border:1px solid var(--edge);padding:24px;min-height:calc(100dvh - 28px)}
+h1{margin:0;font-size:clamp(26px,4.6vw,34px);font-weight:700;letter-spacing:-.025em;line-height:1.1;background:linear-gradient(90deg,var(--tx),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mu);margin:6px 0 18px;max-width:75ch}
+.hd{display:flex;gap:14px;align-items:center}.hi{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;display:grid;place-items:center;box-shadow:0 8px 22px rgba(124,77,255,.45);flex-shrink:0}.hi .i{width:24px;height:24px}
+.g{display:grid;gap:14px;grid-template-columns:repeat(12,1fr);margin-bottom:14px}
+.c4{grid-column:span 4}.c5{grid-column:span 5}.c7{grid-column:span 7}.c8{grid-column:span 8}.c12{grid-column:span 12}
+#m>.card,#m>.g,.hero{animation:up .4s both}#m.still>*{animation:none}
+@keyframes up{from{opacity:0;transform:translateY(8px)}}

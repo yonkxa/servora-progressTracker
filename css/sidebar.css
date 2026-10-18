@@ -1,0 +1,19 @@
+/* SIDEBAR: floating icon rail. Expands as an overlay (no page reflow = smooth). Labels hidden until expanded. */
+.sb{position:fixed;left:14px;top:calc(14px + env(safe-area-inset-top,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));width:68px;z-index:40;padding:10px;border-radius:26px;background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--edge);box-shadow:var(--sh);overflow:hidden auto;overscroll-behavior:contain;contain:layout paint style;transition:width .38s cubic-bezier(.22,1,.36,1),box-shadow .3s}
+.sb.ex{width:236px;box-shadow:0 24px 60px rgba(124,77,255,.3)}
+@media(hover:hover) and (min-width:781px){.sb:hover{width:236px;box-shadow:0 24px 60px rgba(124,77,255,.3)}}
+.brand{display:flex;align-items:center;gap:12px;height:46px;padding:0 6px;font-weight:700;font-size:17px;white-space:nowrap;margin-bottom:6px;cursor:pointer}
+.lg{width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,var(--ac),var(--ac2));display:grid;place-items:center;color:#fff;flex-shrink:0;transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+.sb:hover .lg,.sb.ex .lg{transform:rotate(-8deg) scale(1.06)}
+.nv{position:relative;display:flex;align-items:center;gap:12px;width:100%;height:44px;padding:0 13px;border:0;background:none;color:var(--mu);font:inherit;font-size:14.5px;font-weight:500;border-radius:15px;cursor:pointer;white-space:nowrap;margin-bottom:2px;transition:background .25s,color .25s,transform .3s cubic-bezier(.22,1,.36,1)}
+.nv .i{transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+.nv:hover{background:var(--soft);color:var(--tx)}.nv:hover .i{transform:scale(1.15)}
+.nv.on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:#fff;box-shadow:0 8px 20px -4px rgba(124,77,255,.5)}
+.nv.pop .i{animation:hop .55s cubic-bezier(.34,1.56,.64,1)}
+@keyframes hop{0%{transform:scale(.6)}55%{transform:translateY(-5px) scale(1.2)}100%{transform:none}}
+.nv em{margin-left:auto;font-style:normal;font-size:11px;background:var(--soft);color:var(--mu);border-radius:99px;padding:1px 8px}.nv.on em{background:rgba(255,255,255,.25);color:#fff}
+.nv span,.nv em,.brand span,.sec span{opacity:0;visibility:hidden;transform:translateX(-10px);transition:opacity .18s,transform .3s,visibility 0s .2s}
+.sb.ex :is(.nv span,.nv em,.brand span,.sec span){opacity:1;visibility:visible;transform:none;transition:opacity .28s .1s,transform .4s .06s,visibility 0s}
+@media(hover:hover) and (min-width:781px){.sb:hover :is(.nv span,.nv em,.brand span,.sec span){opacity:1;visibility:visible;transform:none;transition:opacity .28s .1s,transform .4s .06s,visibility 0s}}
+.sec{height:28px;display:flex;align-items:flex-end;padding:0 12px 4px;font-size:10.5px;letter-spacing:.09em;color:var(--mu);font-weight:700;white-space:nowrap}
+.nv.mo{display:none}

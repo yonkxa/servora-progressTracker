@@ -1,0 +1,13 @@
+/* BASE: reset, iOS-style type, static background layer, scrollbars, icons */
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--tx);font:15px/1.45 -apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Inter","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;letter-spacing:-.011em}
+h1,h2,h3,b{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Segoe UI",Roboto,sans-serif}
+button,input,textarea{font-family:inherit;letter-spacing:inherit}
+#bg{position:fixed;inset:0;z-index:-1;transform:translateZ(0);background:linear-gradient(135deg,var(--bgA),var(--bgB) 50%,var(--bgC))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bgA);z-index:50}
+*{scrollbar-width:thin;scrollbar-color:#fff transparent}
+::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#fff;border-radius:99px;border:2px solid transparent;background-clip:content-box}
+svg.i{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}

@@ -1,0 +1,10 @@
+/* DROPDOWN + STATUS PILLS: custom select menus and colored pills */
+/* dropdown */
+.dd{position:relative}.ddb{width:100%;display:flex;align-items:center;gap:8px;text-align:left;font:inherit;color:var(--tx);background:var(--in);border:1.5px solid var(--bd);border-radius:12px;padding:9px 12px;cursor:pointer;transition:border-color .2s}
+.ddb:hover,.dd.open .ddb{border-color:var(--ac)}.ddb .ch{margin-left:auto;transition:transform .25s}.dd.open .ch{transform:rotate(180deg)}
+.ddm{position:fixed;z-index:60;background:var(--card);border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,.5);padding:6px;max-height:260px;overflow:auto;animation:pop .18s both;border:1px solid var(--bd)}
+@keyframes pop{from{opacity:0;transform:translateY(-6px) scale(.97)}}
+.opt{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:9px;cursor:pointer;white-space:nowrap}.opt:hover{background:var(--soft)}.opt.sel{background:color-mix(in srgb,var(--ac) 14%,transparent);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:99px;font-size:12.5px;font-weight:600}
+.dd.sm .ddb{padding:4px 8px;border-radius:99px;border-width:0;font-size:12.5px;font-weight:600;width:auto}
+.s0{background:var(--b0);color:var(--c0)}.s1{background:var(--b1);color:var(--c1)}.s2{background:var(--b2);color:var(--c2)}.s3{background:var(--b3);color:var(--c3)}
