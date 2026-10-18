@@ -22,3 +22,4 @@
 .seg button b{font-size:16px;font-weight:700;line-height:1.1}.seg button small{font-size:10.5px}.seg button:active{transform:scale(.94)}
 .seg button.on{background:var(--card);box-shadow:0 4px 12px rgba(0,0,0,.12);color:var(--tx)}
 .seg button.on[data-k="0"] .i{color:var(--c0)}.seg button.on[data-k="1"] .i{color:var(--c1)}.seg button.on[data-k="2"] .i{color:var(--c2)}.seg button.on[data-k="3"] .i{color:var(--c3)}
+.bld{font-size:11px;line-height:1.5;color:var(--mu);text-align:center;margin:14px 0 0}

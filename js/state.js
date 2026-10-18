@@ -1,4 +1,5 @@
 // STATE: storage key, objective mapping, seeding, app state, localStorage save, small helpers
+const BUILD='v8 · 19 Oct 2026 · see-through status bar';
 const SK='servora-tracker-v3';
 const oOf=(r,g)=>r=='cl'?3:r=='sys'?(g=='Dashboard & Reports'?5:1):g=='Dashboard & Analytics'?5:(r=='own'&&/Onboarding|Subscription/.test(g))?1:(g=='Operations & Money'||g=='Billing'||(r!='own'&&/Appointments|Booking|Service Flow|Billing/.test(g)))?4:2;
 const uid=()=>Math.random().toString(36).slice(2,9);
