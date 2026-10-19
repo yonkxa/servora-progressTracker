@@ -23,3 +23,10 @@
 .seg button.on{background:var(--card);box-shadow:0 4px 12px rgba(0,0,0,.12);color:var(--tx)}
 .seg button.on[data-k="0"] .i{color:var(--c0)}.seg button.on[data-k="1"] .i{color:var(--c1)}.seg button.on[data-k="2"] .i{color:var(--c2)}.seg button.on[data-k="3"] .i{color:var(--c3)}
 .bld{font-size:11px;line-height:1.5;color:var(--mu);text-align:center;margin:14px 0 0}
+/* confirm dialog */
+.mdl{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:16px;background:rgba(20,10,40,.45);backdrop-filter:blur(4px);opacity:0;transition:opacity .25s}.mdl.in{opacity:1}
+.mdc{width:min(100%,380px);background:var(--card);color:var(--tx);border-radius:28px;padding:22px;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.45);transform:translateY(20px) scale(.94);transition:transform .4s cubic-bezier(.34,1.4,.5,1)}.mdl.in .mdc{transform:none}
+.mdi{width:52px;height:52px;border-radius:18px;margin:0 auto 12px;display:grid;place-items:center;background:var(--b2);color:var(--c2)}.mdi .i{width:26px;height:26px}
+.mdc h3{margin:0 0 6px;font-size:18px;font-weight:700;letter-spacing:-.02em}.mdc p{margin:0 0 18px;color:var(--mu);line-height:1.45}
+.mda{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mda .btn{min-height:46px}.btn.dg{background:linear-gradient(135deg,#ef4444,#f97316);box-shadow:0 8px 18px rgba(239,68,68,.35)}
+@media(max-width:780px){.mdl{place-items:end center;padding:12px 12px calc(12px + env(safe-area-inset-bottom,0px))}.mdc{width:100%;border-radius:30px}}

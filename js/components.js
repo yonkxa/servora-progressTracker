@@ -4,3 +4,10 @@ const pct=f=>Math.round(cnt(f,'Done')/(cnt(f)||1)*100);
 const gauge=p=>`<div class="gauge"><svg viewBox="0 0 200 110" width="100%" style="max-width:240px"><defs><linearGradient id="gg"><stop offset="0" stop-color="#7c4dff"/><stop offset="1" stop-color="#d946ef"/></linearGradient></defs><path d="M12 100A88 88 0 0 1 188 100" fill="none" stroke="var(--soft)" stroke-width="16" stroke-linecap="round"/><path d="M12 100A88 88 0 0 1 188 100" fill="none" stroke="url(#gg)" stroke-width="16" stroke-linecap="round" stroke-dasharray="${p/100*276.5} 277" style="transition:stroke-dasharray .8s"/></svg><b>${p}%</b><small>completed</small></div>`;
 const tiles=f=>ST.map((s,k)=>`<div class="lr t${k}">${I(s[1])}<span>${s[0]}</span><b>${cnt(f,s[0])}</b></div>`).join('');
 const prog=f=>`<div class="pg">${gauge(pct(f))}<div class="leg">${tiles(f)}</div></div>`;
+// CONFIRM DIALOG: styled popup (bottom sheet on phones, centered on desktop). Esc / outside tap / Cancel closes.
+function ask(t,msg,ok,fn){const o=document.createElement('div');o.className='mdl';
+o.innerHTML=`<div class="mdc" role="dialog" aria-modal="true"><div class="mdi">${I('alert')}</div><h3>${t}</h3><p>${msg}</p><div class="mda"><button class="btn" data-x>Cancel</button><button class="btn p dg" data-ok>${ok}</button></div></div>`;
+const kd=e=>{if(e.key=='Escape')close()},close=()=>{o.classList.remove('in');document.removeEventListener('keydown',kd);setTimeout(()=>o.remove(),260)};
+document.addEventListener('keydown',kd);
+o.addEventListener('click',e=>{if(e.target==o||e.target.closest('[data-x]'))close();else if(e.target.closest('[data-ok]')){close();fn()}});
+document.body.appendChild(o);requestAnimationFrame(()=>{o.classList.add('in');o.querySelector('[data-x]').focus()})}
