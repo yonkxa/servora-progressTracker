@@ -1,5 +1,5 @@
 // NAVIGATION: sidebar / bottom dock (built once, then updated in place so CSS animations can play), page switch, theme, export, reset
-const NI={board:'kanban',ready:'flag',home:'home',obj:'target',sys:'shield',own:'crown',mgr:'compass',fo:'desk',cl:'phone'};
+const NI={saas:'layers',board:'kanban',ready:'flag',home:'home',obj:'target',sys:'shield',own:'crown',mgr:'compass',fo:'desk',cl:'phone'};
 let lastV='';
 const short=r=>r.name.split(' (')[0],rc=r=>cnt(i=>i.role==r.id,'Done')+'/'+cnt(i=>i.role==r.id);
 function build(){const n=(v,l,x='')=>`<button class="nv ${x}" data-v="${v}" onclick="go('${v}')" title="${l}">${I(NI[v])}<span>${l}</span>${x=='r'?'<em></em>':''}</button>`;

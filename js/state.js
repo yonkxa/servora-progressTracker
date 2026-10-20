@@ -1,8 +1,8 @@
 // STATE: storage key, objective mapping, seeding, app state, localStorage save, small helpers
-const BUILD='v10 · 19 Oct 2026 · defense test checklist';
+const BUILD='v11 · 21 Oct 2026 · updated system + SaaS config';
 const tcSet=()=>{const m=document.getElementById('tc');if(m)m.content=document.documentElement.dataset.theme=='dark'?'#2a1e55':'#c7b3ff'};
-const SK='servora-tracker-v3';
-const oOf=(r,g)=>r=='cl'?3:r=='sys'?(g=='Dashboard & Reports'?5:1):g=='Dashboard & Analytics'?5:(r=='own'&&/Onboarding|Subscription/.test(g))?1:(g=='Operations & Money'||g=='Billing'||(r!='own'&&/Appointments|Booking|Service Flow|Billing/.test(g)))?4:2;
+const SK='servora-tracker-v4';
+const oOf=(r,g)=>r=='saas'?({'Plans & feature gating':1,'Booking rules per branch':3,'Queue & service rules':4,'Payments & programs':4}[g]||2):r=='cl'?3:r=='sys'?(g=='Dashboard & Reports'?5:1):g=='Dashboard & Analytics'?5:(r=='own'&&/Onboarding|Subscription/.test(g))?1:(g=='Operations & Money'||g=='Billing'||(r!='own'&&/Appointments|Booking|Service Flow|Billing/.test(g)))?4:2;
 const uid=()=>Math.random().toString(36).slice(2,9);
 const seed=()=>{const a=[];ROLES.forEach(r=>Object.entries(r.g).forEach(([g,l])=>l.forEach(t=>{let s=0;if(t[0]=='!'){s=2;t=t.slice(1)}else if(t[0]=='?'){s=3;t=t.slice(1)}
 const n=/payroll/i.test(t)?'Payroll is out of scope in the study docs.':/face scan/i.test(t)?'Docs list biometric auth as out of scope. Confirm.':'';

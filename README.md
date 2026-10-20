@@ -18,13 +18,13 @@ css/
   responsive.css    container queries + phone pill dock + More sheet
 js/
   icons.js          SVG icons
-  data.js           roles, features, objectives  <- edit the default list here
+  data.js           6 sections (5 roles + SaaS config), features, objectives  <- edit the default list here
   state.js          storage, seeding, app state
   components.js     bar / gauge / tiles
   dropdown.js       custom select component
   nav.js            sidebar, theme, export, reset
   pages.js          overview (purpose hero), objectives, role pages, add/edit/delete
-  capstone.js       readiness checklists (UAT, paper, defense) + Board + Readiness pages
+  capstone.js       readiness checklists (UAT per role, SaaS config tests, objective acceptance, e2e, evidence, paper, defense) + Board + Readiness pages
   app.js            boot
 ```
 Script order in index.html matters (data -> state -> components -> dropdown -> nav -> pages -> capstone -> app).
@@ -33,6 +33,6 @@ Script order in index.html matters (data -> state -> components -> dropdown -> n
 Upload this folder (or push to GitHub and import). Framework: Other. Build command: empty. Output directory: `.`
 
 ## Notes
-- Edits are saved in each browser's localStorage under `servora-tracker-v3` (items) and `servora-tracker-v3c` (checklist). Not shared across devices.
+- Edits are saved in each browser's localStorage under `servora-tracker-v4` (features) and `servora-tracker-v4c` (readiness ticks). Not shared across devices.
 - Changing default items in `data.js` only affects new visitors, or after "Reset defaults".
 - Keep the storage key unchanged unless you want everyone reset.
